@@ -115,7 +115,10 @@ function manipulateString(initialString, charToRemove) {
   for (let i = 0; i < initialString.length; i++) {
     // initialString.charAt(0) // primo carattere di initialString
     // devo controllare che questo carattere sia DIVERSO da charToRemove
-    if (initialString.charAt(i) !== charToRemove) {
+    if (
+      initialString.charAt(i) !== charToRemove.toLowerCase() &&
+      initialString.charAt(i) !== charToRemove.toUpperCase()
+    ) {
       // in tal caso, lo aggiungo alla stringa resultingString
       resultingString += initialString.charAt(i)
     } // non serve neanche un else! eviterò di aggiungere il carattere se la condizione non si verifica
@@ -124,6 +127,7 @@ function manipulateString(initialString, charToRemove) {
 }
 
 let stringaAccorciata1 = manipulateString('Ciao Epicoders!', 'c')
-// manipulateString('Arriva il weekend!', 'E')
+let stringaAccorciata2 = manipulateString('E arriva il weekend!', 'E')
 
 console.log(stringaAccorciata1)
+console.log(stringaAccorciata2)

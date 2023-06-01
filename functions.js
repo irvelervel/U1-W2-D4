@@ -29,7 +29,7 @@ function sum() {
 
 let z = sum() // sum() ora è esattamente pari al suo valore di ritorno
 console.log(z)
-// ora ho z che rappresenta il risultato dell'esecuzione di sum, posso andare avanti..
+// ora ho z che rappresenta il risultato dell'esecuzione di sum, ovvero result. posso andare avanti...
 
 // -------
 
@@ -42,10 +42,42 @@ function replacePlayer() {
   return players // ritorno l'array modificato, in modo da renderlo disponibile come risultato
 }
 
-let newTeam = replacePlayer()
-console.log(newTeam)
+let newTeam = replacePlayer() // posso trattare replacePlayer() come il suo valore di ritorno, e assegnarlo ad una nuova variabile
+console.log(newTeam) // squadra aggiornata
 
 // la funzione replacePlayer va bene, ma al momento è molto rigida: esegue sempre la stessa sostituzione operando sugli stessi giocatori
 // sarebbe bello poter "personalizzare" questa funzione, cercando di renderla meno rigida e specificare:
 // 1) quale giocatore deve essere sostituito
 // 2) qual è il giocatore in sostituzione
+
+// --------
+let number = 50.2
+
+function round() {
+  let roundedNumber = Math.floor(number) // --> 50
+  return roundedNumber
+}
+
+let middleResult = round() // <-- 50 tondo tondo
+
+function addTwenty() {
+  let total = middleResult + 20
+  return total
+}
+
+const totalNumber = addTwenty()
+console.log(totalNumber)
+
+// ----------
+// PARAMETRI NELLE FUNZIONI
+// una funzione che sa fare sempre e solo la stessa cosa è noiosa! oltre che poco utile :)
+
+function smartSum(n1, n2) {
+  let total = n1 + n2
+  console.log(total)
+}
+
+smartSum(10, 5)
+smartSum(4, 7)
+// let bigNumber = smartSum(12312, 324532324)
+// console.log('questo è bigNumber', bigNumber) // undefined, perchè in questo caso smartSum non ha un valore di ritorno!

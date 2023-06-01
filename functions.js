@@ -81,3 +81,49 @@ smartSum(10, 5)
 smartSum(4, 7)
 // let bigNumber = smartSum(12312, 324532324)
 // console.log('questo è bigNumber', bigNumber) // undefined, perchè in questo caso smartSum non ha un valore di ritorno!
+
+const initialTeam = ['Simone', 'Valerio', 'Paolo', 'Raffaele', 'Nicole']
+
+function replacePlayerCustom(indexToReplace, substitution) {
+  if (
+    indexToReplace >= 0 && // indice maggiore o uguale a 0
+    indexToReplace < initialTeam.length && // indice minore di 5
+    typeof indexToReplace === 'number' // indice come numero
+  ) {
+    initialTeam.splice(indexToReplace, 1, substitution)
+  } else {
+    console.log('ERRORE NELLA SOSTITUZIONE')
+  }
+}
+
+replacePlayerCustom(2, 'Alessio')
+replacePlayerCustom(0, 'Giovanni')
+// replacePlayerCustom('Giovanni', 0) // NON FUNZIONA COME PREVISTO! l'ordine dei parametri è fondamentale!
+
+// adesso initialTeam è diverso dall'inizio!
+
+console.log('initialTeam', initialTeam)
+
+replacePlayerCustom(10, 'Stefano') // devo evitare di fare lo splice qui!
+
+console.log('initialTeam', initialTeam)
+
+function manipulateString(initialString, charToRemove) {
+  // inizializziamo la stringa che torneremo come risultato intanto come stringa vuota
+  let resultingString = ''
+  // ciclo tutti i caratteri della stringa initialString
+  for (let i = 0; i < initialString.length; i++) {
+    // initialString.charAt(0) // primo carattere di initialString
+    // devo controllare che questo carattere sia DIVERSO da charToRemove
+    if (initialString.charAt(i) !== charToRemove) {
+      // lo aggiungo alla stringa resultingString
+      resultingString += initialString.charAt(i)
+    }
+  }
+  return resultingString
+}
+
+let stringaAccorciata1 = manipulateString('Ciao Epicoders!', 'c')
+// manipulateString('Arriva il weekend!', 'E')
+
+console.log(stringaAccorciata1)

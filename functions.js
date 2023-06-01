@@ -116,9 +116,9 @@ function manipulateString(initialString, charToRemove) {
     // initialString.charAt(0) // primo carattere di initialString
     // devo controllare che questo carattere sia DIVERSO da charToRemove
     if (initialString.charAt(i) !== charToRemove) {
-      // lo aggiungo alla stringa resultingString
+      // in tal caso, lo aggiungo alla stringa resultingString
       resultingString += initialString.charAt(i)
-    }
+    } // non serve neanche un else! eviterò di aggiungere il carattere se la condizione non si verifica
   }
   return resultingString
 }
